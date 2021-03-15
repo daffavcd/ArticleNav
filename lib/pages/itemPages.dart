@@ -17,16 +17,77 @@ class ItemPages extends StatelessWidget {
           title: Text("Item Pages"),
         ),
         body: Container(
-          margin: const EdgeInsets.only(top: 10.0),
-          padding: const EdgeInsets.all(8.0),
-          alignment: Alignment.center,
-          child: Text(
-              "Nama : " +
-                  tempItem.name +
-                  " | Harga : Rp. " +
-                  tempItem.price.toString(),
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 22, color: Colors.black87)),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.purple[400], width: 2.5)),
+          child: Column(children: <Widget>[
+            Column(children: <Widget>[
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      alignment: Alignment.center,
+                      child: Text(
+                        tempItem.name,
+                        style: TextStyle(fontSize: 22, color: Colors.black87),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ]),
+            Column(children: <Widget>[
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 270,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: NetworkImage(tempItem.image),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ]),
+            Column(children: <Widget>[
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(tempItem.desc,
+                          textAlign: TextAlign.justify,
+                          style:
+                              TextStyle(fontSize: 18, color: Colors.black54)),
+                    ),
+                  ),
+                ],
+              )
+            ]),
+            Column(children: <Widget>[
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      color: Colors.blue[50],
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                          "Harga Eceran Tertinggi :  Rp. " +
+                              tempItem.price.toString() +
+                              ",00",
+                          textAlign: TextAlign.justify,
+                          style:
+                              TextStyle(fontSize: 18, color: Colors.black54)),
+                    ),
+                  ),
+                ],
+              )
+            ]),
+          ]),
         ),
       ),
     );
