@@ -5,7 +5,7 @@ class ItemPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Item tempItem = ModalRoute.of(context).settings.arguments;
-    ;
+
     var materialApp = MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
