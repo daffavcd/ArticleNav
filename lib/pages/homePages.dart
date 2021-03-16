@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsheet6/models/item.dart';
+import 'package:jobsheet6/widgets/cardKu.dart';
 
 class HomePages extends StatelessWidget {
   final List<Item> items = [
@@ -40,21 +41,7 @@ class HomePages extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, '/item', arguments: item);
                 },
-                child: Card(
-                  child: Container(
-                    margin: EdgeInsets.all(8),
-                    child: Row(
-                      children: [
-                        Expanded(child: Text(item.name)),
-                        Expanded(
-                            child: Text(
-                          item.price.toString(),
-                          textAlign: TextAlign.end,
-                        ))
-                      ],
-                    ),
-                  ),
-                ),
+                child: Cardku(item: item),
               );
             }),
       ),
